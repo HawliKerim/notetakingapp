@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
   return (
     <div className="grid items-center justify-center h-screen w-screen lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-7 grid-cols-3 grid-rows-3 ">
-      {notes.map((data) => {
+      {notes.map((data) => { 
         return (
           <div
             className="ml-2 bg-gray-400 rounded-md grid justify-center "
