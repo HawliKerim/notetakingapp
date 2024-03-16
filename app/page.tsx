@@ -12,6 +12,7 @@ export default function Home() {
   const [title, setTitle] = useState('');
   const [notes, setNotes] = useState(new Array());
   const submit = () => {
+    
     if (content !== '' && title !== '') {
     try {  
         axios
@@ -42,7 +43,7 @@ export default function Home() {
   }, []);
   return (
     <div className="grid items-center justify-center h-screen w-screen lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-7 grid-cols-3 grid-rows-3 ">
-      {notes.map((data) => { 
+      {notes.map((data) => {
         return (
           <div
             className="ml-2 bg-gray-400 rounded-md grid justify-center "
@@ -52,6 +53,9 @@ export default function Home() {
 
             <span>{data.content}</span>
             <br />
+            <p className='font-bold'>{data.createdAt.slice(data.createdAt.lenght,10)}</p>
+            <br />
+
             <Button
               onClick={() => {
                 axios.post('/api/notes/delete', {
