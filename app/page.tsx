@@ -65,7 +65,7 @@ export default function Home() {
               }}
               className=" w-14 h-7 bg-rose-600 mb-1"
             >
-              Sil
+              Delete
             </Button>
           </div>
         );
@@ -73,17 +73,19 @@ export default function Home() {
 
       <div className="fixed bottom-2 left-2">
         <Input
-          placeholder="Başlığı gir"
+          placeholder="Enter your title"
           className="w-72"
+          value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <Input
-          placeholder="Notunu gir"
+          placeholder="Enter your note"
           className="w-72  mt-2"
+          value={content}
           onChange={(e) => setContent(e.target.value)}
         />
         <Button variant="default" className="mt-2" onClick={submit}>
-          Gönder
+          Submit
         </Button>
       </div>
     </div>
